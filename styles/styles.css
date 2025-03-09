@@ -8,7 +8,7 @@ body {
     height: 200%;
     width: 100%;
 
-    background-image: url('./background/frame1.png');
+    background-image: url(./background/frame1.png);
     background-color: black;
     background-repeat: no-repeat;
     background-position: center;
@@ -211,7 +211,7 @@ h2 {
     position: relative;
     max-width: 1000px;
     max-height: 600px;
-    background-image: url('./background/background_stars.png');
+    background-image: url(./background/background_stars.png);
     background-size: cover;
     color: white;
 
@@ -308,7 +308,7 @@ h2 {
     position: relative;
     width: 1000px;
     height: 600px;
-    background-image: url('./background/background_stars.png');
+    background-image: url(./background/background_stars.png);
     background-size: cover;
     color: white;
 
