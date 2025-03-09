@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link type="image/x-icon" href="/icons/favicon.ico" rel="shortcut icon">
+    <link type="Image/x-icon" href="/icons/favicon.ico" rel="icon">
+    <title>Alina-web</title>
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="title_box">
+                <h1>alina-web</h1>
+            </div>
+        </header>
+        <main class="clickable_container">
+            <button id="open_modal_heart_button" class="button_heart">
+                <img class="gradient_heart" src="/icons/gradient_heart.svg" alt="Сердечко" width="650px" height="550px">
+                <h3 class="heart_text">hover me</h3>
+                <h3 class="heart_text_hover">click me</h3>
+            </button>
+
+            <div class="modal_container_heart" id="modal_container_heart">
+                <div class="modal_box_heart">
+                    <div>
+                        <h4>Dear Alina,</h4>
+                        <p>I congratulate you on 8th of March! I made this present for you, the most important, beautiful, smart and perfect girl in the world. Every moment, when you will felt upset, you can visit this website and understand that I always with you</p>
+                    </div>
+                    <img src="/photos/photo_2024-03-09_12-14-41.jpg">
+                    <button class="close_button" id="close_button_heart"><img class="close_icon" src="/icons/close_icon.svg"></button>
+                    <img class="gradient_heart_modal" src="/icons/gradient_heart_modal.svg">
+                </div>
+            </div>
+
+            <button class="button_star" id="open_modal_star_button">
+                <img class="gradient_star" src="/icons/gradient_star.svg" alt="Звездочка">
+                <h3 class="star_text">hover me</h3>
+                <h3 class="star_text_hover">click me</h3>
+            </button>
+            
+            <div class="modal_container_star" id="modal_container_star">
+                <div class="modal_box_star">
+                    <p class="paragraph_mdl_bx_star">Some photos :)</p>
+                    <div class="slider">
+                        <img class="slider_photo active" src="/photos/slider/1.jpg">
+                        <img class="slider_photo" src="/photos/slider/2.jpg">
+                        <img class="slider_photo" src="/photos/slider/3.jpg">
+                        <img class="slider_photo" src="/photos/slider/4.jpg">
+                        <img class="slider_photo" src="/photos/slider/5.jpg">
+                        <img class="slider_photo" src="/photos/slider/6.jpg">
+
+                        <img class="prev controlls" src="/icons/prev.svg">
+                        <img class="next controlls" src="/icons/next.svg">
+                    </div>
+                    <button class="close_button" id="close_button_star"><img class="close_icon" src="/icons/close_icon.svg"></button>
+                    <script src="/script/slider.js"></script>
+                </div>
+            </div>
+
+        </main>
+        <footer class="footer">
+            <div class="footer_box">
+                <h2>with love. for my darling</h2>
+                <img class="mini_heart" src="/icons/mini_gradient_heart.svg" alt="Маленькое сердечко">
+            </div>
+        </footer>
+    </div>
+
+    <script src="/script/modal.js"></script>
+</body>
+</html>
