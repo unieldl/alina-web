@@ -1,0 +1,406 @@
+body {
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+
+    height: 200%;
+    width: 100%;
+
+    background-image: url('/background/frame1.png');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 600px;
+    height: 60px;
+    margin-left: 10%;
+
+    background-image: linear-gradient(96deg, #C9C4C4, #FFFFFF);
+
+    border-bottom: 5px solid #FFFFFF;
+    border-inline: 5px solid #FFFFFF;
+    border-radius: 0 0 40px 40px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.clickable_container {
+    height: 80%;
+    box-sizing: border-box;
+    padding-top: 2%;
+    padding-bottom: 3%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button_heart {
+    background: none;
+    border: none;
+    padding: none;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+    display: flex;
+    text-align: center;
+
+    transition-property: rotate, scale;
+    transition-duration: .15s;
+    transition-timing-function: ease-in;
+}
+
+.heart_text, .heart_text_hover {
+    margin: 0;
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 200;
+
+    transition-property: opacity, scale;
+    transition-duration: .05s;
+    transition-timing-function: ease-in;
+}
+
+.heart_text_hover {
+    opacity: 0;
+}
+
+.button_heart:hover .heart_text {
+    opacity: 0;
+}
+
+.button_heart:hover {
+    rotate: -5deg;
+    scale: 1.07;
+}
+
+.button_heart:hover .heart_text_hover {
+    scale: 1.15;
+    opacity: 1;
+}
+
+.button_star {
+    background: none;
+    border: none;
+    padding: none;
+    position: relative;
+
+    display: flex;
+    text-align: center;
+
+    transition-property: rotate, scale;
+    transition-duration: .15s;
+    transition-timing-function: ease-in;
+}
+
+.star_text, .star_text_hover {
+    margin: 0;
+    position: absolute;
+    bottom: 47%;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 200;
+
+    transition-property: opacity, scale;
+    transition-duration: .05s;
+    transition-timing-function: ease-in;
+}
+
+.button_star:hover {
+    rotate: -5deg;
+    scale: 1.07;
+}
+
+.star_text_hover {
+    opacity: 0;
+}
+
+.button_star:hover .star_text_hover {
+    scale: 1.15;
+    opacity: 1;
+}
+
+.button_star:hover .star_text {
+    opacity: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_box {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    width: 1000px;
+    height: 80px;
+
+    border-top: 5px solid #FFFFFF;
+    border-inline: 5px solid #FFFFFF;
+    border-radius: 40px 40px 0 0;
+
+    background-image: linear-gradient(36deg, #C9C4C4, #FFFFFF);
+}
+
+h2 {
+    margin: 0;
+    margin-left: 10%;
+    font-size: 48px;
+    font-weight: 300;
+}
+
+.mini_heart {
+    position: absolute;
+    right: -30px;
+    bottom: 0px;
+}
+
+/* модальное окно сердце */
+
+.modal_container_heart {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease-in, visibility .4s ease-in;
+}
+
+.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.modal_box_heart {
+    position: relative;
+    max-width: 1000px;
+    max-height: 600px;
+    background-image: url(/background/background_stars.png);
+    background-size: cover;
+    color: white;
+
+    box-sizing: border-box;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: white;
+    border-width: 10px;
+
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    transform: scale(0);
+    transition: transform .4s ease-in;
+}
+
+.gradient_heart_modal {
+    position: absolute;
+    right: -70px;
+    bottom: -70px;
+}
+
+.close_button {
+    width: 35px;
+    height: 35px;
+    background: none;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 0;
+    border: none;
+    transition-property: rotate, scale; 
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+.close_button:hover .close_icon{
+    rotate: -7deg;
+    scale: 1.15;
+}
+
+.open .modal_box_heart {
+    transform: scale(1);
+}
+
+.modal_box_heart img {
+    max-width: 328px;
+    max-height: 410px;
+    min-height: auto;
+    min-width: auto;
+}
+
+.modal_box_heart {
+    font-size: 32px;
+}
+
+.modal_box_heart p, h4 {
+    margin: 0px;
+}
+
+/* модальное окно звезда */
+
+.modal_container_star {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease-in, visibility .4s ease-in;
+}
+
+.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.modal_box_star {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    background-image: url(/background/background_stars.png);
+    background-size: cover;
+    color: white;
+
+    box-sizing: border-box;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: white;
+    border-width: 10px;
+
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    transform: scale(0);
+    transition: transform .4s ease-in;
+}
+
+.close_button {
+    width: 35px;
+    height: 35px;
+    background: none;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 0;
+    border: none;
+    transition-property: opacity, rotate, scale; 
+    transition-duration: .8s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+.close_button:hover .close_icon{
+    rotate: -7deg;
+    scale: 1.15;
+    opacity: 0.8;
+}
+
+.open .modal_box_star {
+    transform: scale(1);
+}
+
+.paragraph_mdl_bx_star {
+    position: absolute;
+    top: 5px;
+    left: 44%
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slider_photo {
+    height: 100%;
+    width: auto;
+    max-height: 100%;
+
+    display: none;
+}
+
+.slider_photo.active {
+    display: block;
+}
+
+.controlls {
+    position: absolute;
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+}
+
+.controlls:hover {
+    opacity: 0.5;
+}
+
+.controlls.next {
+    bottom: 44%;
+    right: 6px;
+}
+
+.controlls.prev {
+    bottom: 44%;
+    left: 6px;
+}
